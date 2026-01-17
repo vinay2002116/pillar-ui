@@ -1,0 +1,4 @@
+.sidebar-header a img {
+    height: 35px; /* Adjust this value to your desired height */
+    width: auto; /* Keep the aspect ratio */
+  }

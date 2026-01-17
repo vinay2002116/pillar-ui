@@ -1,0 +1,42 @@
+steps:
+  - name: 'gcr.io/cloud-builders/git'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        echo "Cloning ui-kit bitbucket repository..."
+        git clone --depth 1 --single-branch --branch staging https://$${_BITBUCKET_USERNAME}:$${_BITBUCKET_PASSWORD}@bitbucket.org/geoiqadmin/geoiq-frontend-web-uikit-v2.git
+
+    secretEnv: ['_BITBUCKET_USERNAME', '_BITBUCKET_PASSWORD']
+
+  - name: 'node:20'
+    dir: 'npm_app'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        ls
+        if [ -f pnpm-lock.yaml ]; then rm pnpm-lock.yaml; fi && \
+        if [ -f yarn.lock ]; then rm yarn.lock; fi && \
+        if [ -d node_modules ]; then rm -rf node_modules; fi && \
+        if [ -f package-lock.json ]; then rm package-lock.json; fi && \
+        yarn
+        yarn run build-storybook
+        ls
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gsutil -m cp -r storybook-static/* gs://stg-fe-geoiq-ui-kit-v2/
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/prj-geoiq-product-in-stg/secrets/BITBUCKET_USERNAME/versions/1
+      env: '_BITBUCKET_USERNAME'
+    - versionName: projects/prj-geoiq-product-in-stg/secrets/BITBUCKET_PASSWORD/versions/1
+      env: '_BITBUCKET_PASSWORD'
+
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET

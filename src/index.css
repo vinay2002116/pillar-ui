@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  
+@layer base {
+  :root {
+    /* Neutral */
+    --neutral-0: 255 255 255;
+    --neutral-25: 249 250 251;
+    --neutral-50: 246 246 246;
+    --neutral-100: 231 231 231;
+    --neutral-200: 209 209 209;
+    --neutral-300: 176 176 176;
+    --neutral-400: 136 136 136;
+    --neutral-500: 109 109 109;
+    --neutral-600: 93 93 93;
+    --neutral-700: 74 74 74;
+    --neutral-950: 38 38 38;
+
+    /* Primary */
+    --primary-50: 243 243 255;
+    --primary-100: 234 233 254;
+    --primary-200: 215 214 254;
+    --primary-300: 185 181 253;
+    --primary-400: 151 139 250;
+    --primary-500: 116 91 247;
+    --primary-600: 109 72 239;
+    --primary-700: 83 39 218;
+
+    /* Secondary */
+    --secondary-50: 253 244 243;
+    --secondary-100: 252 230 228;
+    --secondary-200: 251 208 205;
+    --secondary-300: 246 176 171;
+    --secondary-400: 241 144 137;
+
+    /* Danger */
+    --danger-50: 255 241 241;
+    --danger-100: 255 224 224;
+    --danger-200: 255 199 199;
+    --danger-300: 255 160 160;
+    --danger-400: 255 105 105;
+    --danger-500: 249 50 50;
+
+    /* Warning */
+    --warning-50: 255 250 235;
+    --warning-100: 255 241 198;
+    --warning-200: 255 224 136;
+    --warning-300: 255 202 74;
+    --warning-400: 255 184 46;
+    --warning-500: 249 144 7;
+
+    /* Success */
+    --success-50: 240 249 243;
+    --success-100: 220 239 225;
+    --success-200: 187 223 199;
+    --success-300: 141 200 165;
+    --success-400: 93 170 127;
+    --success-500: 67 159 110;
+
+    /* Info */
+    --info-50: 239 246 255;
+    --info-100: 219 234 254;
+    --info-200: 191 219 254;
+    --info-300: 147 197 253;
+    --info-400: 96 165 250;
+    --info-500: 59 130 246;
+  }
+
+  .dark {
+    /* Dark Theme Colors */
+    --neutral-0: 255 255 255 1;
+    --neutral-25: 249 250 251 1;
+    --neutral-50: 246 246 246 1;
+    --neutral-100: 231 231 231 1;
+    --neutral-200: 209 209 209 1;
+    --neutral-300: 176 176 176 1;
+    --neutral-400: 136 136 136 1;
+    --neutral-500: 109 109 109 1;
+    --neutral-600: 93 93 93 1;
+    --neutral-700: 74 74 74 1;
+    --neutral-950: 38 38 38 1;
+
+    /* Primary */
+    --primary-50: 243 243 255 1;
+    --primary-100: 234 233 254 1;
+    --primary-200: 215 214 254 1;
+    --primary-300: 185 181 253 1;
+    --primary-400: 151 139 250 1;
+    --primary-500: 116 91 247 1;
+    --primary-600: 109 72 239 1;
+    --primary-700: 83 39 218 1;
+
+    /* Secondary */
+    --secondary-50: 253 244 243 1;
+    --secondary-100: 252 230 228 1;
+    --secondary-200: 251 208 205 1;
+    --secondary-300: 246 176 171 1;
+    --secondary-400: 241 144 137 1;
+
+    /* Danger */
+    --danger-50: 255 241 241 1;
+    --danger-100: 255 224 224 1;
+    --danger-200: 255 199 199 1;
+    --danger-300: 255 160 160 1;
+    --danger-400: 255 105 105 1;
+    --danger-500: 249 50 50 1;
+
+    /* Warning */
+    --warning-50: 255 250 235 1;
+    --warning-100: 255 241 198 1;
+    --warning-200: 255 224 136 1;
+    --warning-300: 255 202 74 1;
+    --warning-400: 255 184 46 1;
+    --warning-500: 249 144 7 1;
+
+    /* Success */
+    --success-50: 240 249 243 1;
+    --success-100: 220 239 225 1;
+    --success-200: 187 223 199 1;
+    --success-300: 141 200 165 1;
+    --success-400: 93 170 127 1;
+    --success-500: 67 159 110 1;
+
+    /* Info */
+    --info-50: 239 246 255 1;
+    --info-100: 219 234 254 1;
+    --info-200: 191 219 254 1;
+    --info-300: 147 197 253 1;
+    --info-400: 96 165 250 1;
+    --info-500: 59 130 246 1;
+  }
+
+
+  
+  /* ====================To change scrollbar of radix components ================================= */
+  
+  [data-radix-select-viewport],
+  .custom-scrollbar {
+    scrollbar-width: thin !important; /* For Firefox */ /* For Firefox */
+    scroll-margin: 10px;
+  }
+
+  /* ====================To introduce new gradient =============================================== */
+  
+  .brand-primary-secondary-gradient {
+    /* TODO change it to css variable */
+    background: linear-gradient(90deg, #9178e9 0%, #f19089 100%);
+  }
+
+  /* ====================Animated Input ========================================================== */
+
+  @keyframes animatedInputMiddleToTop {
+    0% {
+      transform: translateY(0%); 
+      opacity: 1; 
+    }
+  
+    40% {
+      transform: translateY(-45%); 
+      opacity: 0; 
+    }
+  
+    100% {
+      transform: translateY(-100%); 
+      opacity: 0; 
+    }
+  }
+  
+  @keyframes animatedInputFadeInBottom {
+    0% {
+      transform: translateY(100%); 
+      opacity: 0; 
+    }
+  
+    50% {
+      transform: translateY(20%); 
+      opacity: 0.3; 
+    }
+  
+    50% {
+      transform: translateY(0%); 
+      opacity: 1; 
+    }
+    
+  
+    100% {
+      transform: translateY(0%); 
+      opacity: 1; 
+    }
+  }
+
+  /* ============================================================================================== */
+
+  
+  
+}
+
+
