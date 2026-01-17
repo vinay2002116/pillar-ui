@@ -8,7 +8,7 @@ const meta: Meta<typeof MapToolbar> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['!dev', '!autodocs'],
   argTypes: {
     isDropActive: { control: 'boolean' },
     hideDropPin: { control: 'boolean' },

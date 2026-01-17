@@ -40,8 +40,8 @@ export const NavbarDesktopVariant: Story = {
     credits: 108,
 
     logo: {
-      src: 'https://frontend-static-files.geoiq.io/strapi/geoiq_logo_logo_a2abf034f4.svg',
-      alt: 'GeoIQ Logo',
+      src: '/assets/logo.png',
+      alt: 'PillarUI Logo',
     },
 
     login: {

@@ -1,7 +1,7 @@
 {
-  "name": "geoiq-frontend-ui-kit",
+  "name": "pillar-ui",
   "private": false,
-  "version": "1.5.118",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",

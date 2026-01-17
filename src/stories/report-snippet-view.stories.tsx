@@ -10,7 +10,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['!dev', '!autodocs'],
   argTypes: {},
 } satisfies Meta<typeof ReportSnippetView>
 

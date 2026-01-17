@@ -9,7 +9,7 @@ const meta: Meta<typeof AgentSnippetView> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['!dev', '!autodocs'],
 }
 
 export default meta

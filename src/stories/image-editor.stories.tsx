@@ -7,7 +7,7 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['autodocs'],
+  tags: ['!dev', '!autodocs'],
   argTypes: {
     stickers: {
       control: 'object',

@@ -5,7 +5,7 @@ import React from 'react'
 const meta = {
   title: 'ui/Map Marker Hover Card',
   component: MapMarkerHoverCard,
-  tags: ['autodocs'],
+  tags: ['!dev', '!autodocs'],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
